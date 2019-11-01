@@ -1,0 +1,15 @@
+<%- include partials/header.ejs %>
+
+<div>
+
+<h1>Sign up page</h1>
+<form action="/signup" method="POST">
+    <input placeholder="username" name="username" type="text">
+    <input placeholder="email" name="email" type="email">
+    <button type="submit">Add User</button>
+</form>
+
+</div>
+<%- include partials/footer.ejs %>
+
+<!-- code-server --cert=../certs/MyCertificate.crt --cert-key=../certs/MyKey.key -p 3000 --no-auth -->

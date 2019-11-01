@@ -1,0 +1,44 @@
+<%- include partials/header.ejs %>
+
+<h1> ADD New Products </h1>
+<div>
+  <form action="/products" method="POST">
+    <input placeholder="enter name of product" name="name">
+    <input placeholder="enter description" name="description">
+    <input placeholder="enter votes" name="votes" >
+    <input placeholder="enter image url" name="image">
+    <button type="submit">Add Products</button>
+  </form>
+</div>
+
+
+
+
+
+<hr>
+
+<div class="container" >
+    <div class="row">
+      <% for(var i=0; i< productsData.length; i++ ){ %>
+            
+    <div class="col-sm-4"  style="border: 2px solid black;">
+        <div class="media">
+                <img src="<%=productsData[i].image%>" class="mr-3" alt="<%=productsData[i].name%>">
+                <div class="media-body">
+                  <h5 class="mt-0"><%= productsData[i].name %></h5>
+                  <h5 class="mt-0"><%=  productsData[i].votes %></h5>
+                  <div style="display: flex; ">
+                  <p style="padding: 3px 3px;"><%= productsData[i].description %></p>
+                  <button class="btn btn-danger">Remove</button>
+                </div>
+                </div>
+              </div>
+    </div>
+      <% } %>
+
+    </div>
+
+</div>
+
+
+<%- include partials/footer.ejs %>
